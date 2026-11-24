@@ -1,7 +1,5 @@
-import { Component, OnInit, inject, computed, signal } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { PersonApiService } from '../person-api.service';
-import { Person } from '../models/person.model';
-import { count } from 'rxjs';
 
 @Component({
   imports: [],
