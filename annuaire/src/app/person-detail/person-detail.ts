@@ -10,5 +10,4 @@ export class PersonDetail {
   private readonly personApi = inject(PersonApiService);
   uuid = input.required<string>(); // le :uuid de l'adresse, toujours du texte
   persons = computed(() => this.personApi.persons().find((el) => el.login.uuid === this.uuid()));
-  loading = signal(true);
 }
