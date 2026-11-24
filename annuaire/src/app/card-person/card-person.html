@@ -1,0 +1,7 @@
+<article class="person-card">
+  <img [src]="person().picture.thumbnail" alt="${person().name.first}" />
+  <div>
+    <h2>{{ person().name.first }} {{ person().name.last }}</h2>
+    <p>{{ person().location.city }}</p>
+  </div>
+</article>

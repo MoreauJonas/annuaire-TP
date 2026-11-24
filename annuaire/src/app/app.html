@@ -1,1 +1,10 @@
 <app-header />
+<app-async-state [loading]="loading()" [error]="error()" loadingText="Chargement de l'annuaire">
+  <div class="contain-cards">
+    @for (visiblePerson of visiblePersons(); track visiblePerson.login.uuid) {
+      <app-card-person [person]="visiblePerson" />
+    } @empty {
+      <p>Chargement de l'annuaire…</p>
+    }
+  </div>
+</app-async-state>

@@ -81,3 +81,7 @@ main {
   box-sizing: inherit;
   position: relative;
 }
+body {
+  margin-top: 150px;
+  background-color: #f4f7f8;
+}
