@@ -1,0 +1,12 @@
+header {
+  background-color: #1e3a5f;
+  position: fixed;
+  width: 100%;
+  padding: 10px;
+  top: 0;
+  left: 0;
+}
+header p {
+  color: #f4f6f9;
+  font-weight: 700;
+}
