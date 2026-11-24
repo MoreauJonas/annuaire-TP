@@ -1,15 +1,18 @@
-@if (loading()) {
-  <p>Chargement…</p>
-} @else if (error()) {
-  <h1>Connexion impossible</h1>
-} @else if (persons(); as p) {
-  <article class="product-detail">
-    <img [src]="p.picture.thumbnail" [alt]="p.name.first" />
-    <div class="article_content">
-      <h2>{{ p.name.last }} {{ p.name.first }}</h2>
-      <p>{{ p.location.city }}</p>
-    </div>
-  </article>
-} @else {
-  <h1>Aucune personne ne correspond</h1>
-}
+<section class="contain-detail">
+  <a href="/">Retour à l'annuaire</a>
+  @if (loading()) {
+    <p>Chargement…</p>
+  } @else if (error()) {
+    <h1>Connexion impossible</h1>
+  } @else if (persons(); as p) {
+    <article class="product-detail">
+      <img [src]="p.picture.thumbnail" [alt]="p.name.first" />
+      <div class="article_content">
+        <h2>{{ p.name.last }} {{ p.name.first }}</h2>
+        <p>{{ p.location.city }}</p>
+      </div>
+    </article>
+  } @else {
+    <h1>Aucune personne ne correspond</h1>
+  }
+</section>
