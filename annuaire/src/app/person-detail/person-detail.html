@@ -1,0 +1,11 @@
+@if (persons(); as p) {
+  <article class="product-detail">
+    <img [src]="p.picture.thumbnail" [alt]="p.name.first" />
+    <div class="article_content">
+      <h2>{{ p.name.last }} {{ p.name.first }}</h2>
+      <p>{{ p.location.city }}</p>
+    </div>
+  </article>
+} @else {
+  <h2>Aucune personne ne correspond</h2>
+}

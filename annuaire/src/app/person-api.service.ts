@@ -9,8 +9,12 @@ export class PersonApiService {
   private readonly http = inject(HttpClient);
   private readonly url = 'https://randomuser.me/api/';
 
-  private readonly persons = signal<Person[]>([]);
+  readonly persons = signal<Person[]>([]);
   readonly count = computed(() => this.persons().length);
+
+  constructor() {
+    this.getAll();
+  }
 
   async getAll(): Promise<Person[]> {
     const response = await firstValueFrom(
@@ -18,5 +22,8 @@ export class PersonApiService {
     );
     this.persons.set(response.results);
     return response.results;
+  }
+  async getById(uuid: string): Promise<Person> {
+    return firstValueFrom(this.http.get<Person>(`${this.url}/${uuid}`));
   }
 }

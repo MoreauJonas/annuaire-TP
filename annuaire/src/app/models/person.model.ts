@@ -1,5 +1,5 @@
 export type Person = {
-  login: { uuid: number };
+  login: { uuid: string };
   gender: string;
   name: { first: string; last: string };
   picture: { thumbnail: string };
