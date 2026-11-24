@@ -1,4 +1,8 @@
-@if (persons(); as p) {
+@if (loading()) {
+  <p>Chargement…</p>
+} @else if (error()) {
+  <h1>Connexion impossible</h1>
+} @else if (persons(); as p) {
   <article class="product-detail">
     <img [src]="p.picture.thumbnail" [alt]="p.name.first" />
     <div class="article_content">
@@ -7,5 +11,5 @@
     </div>
   </article>
 } @else {
-  <h2>Aucune personne ne correspond</h2>
+  <h1>Aucune personne ne correspond</h1>
 }

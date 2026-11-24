@@ -1,15 +1,14 @@
-<h1>🔥 Bienvenue, choisis un produit dans le catalogue.</h1>
-<app-async-state [loading]="loading()" [error]="error()" loadingText="Chargement de l'annuaire">
-  <div class="contain-cards">
+<h1>🔥 Bienvenue, choisis une personne dans le catalogue.</h1>
+<app-async-state
+  [loading]="personApi.loading()"
+  [error]="personApi.error()"
+  loadingText="Chargement de l'annuaire..."
+>
+  <app-person-list />
+
+  <!-- <div class="contain-cards">
     @for (person of personApi.persons(); track person.login.uuid) {
       <app-card-person [person]="person" />
-      <li>
-        <a [routerLink]="['/personnes', person.login.uuid]"
-          ><p>{{ person.name.first }} = {{ person.name.last }} €</p>
-        </a>
-      </li>
-    } @empty {
-      <p>. de l'annuaire…</p>
     }
-  </div>
+  </div> -->
 </app-async-state>
