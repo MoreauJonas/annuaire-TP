@@ -28,10 +28,10 @@ export class PersonList {
           person.name.first.trim().toLowerCase() + ' ' + person.name.last.trim().toLowerCase();
         const fullnameL =
           person.name.last.trim().toLowerCase() + ' ' + person.name.first.trim().toLowerCase();
-        // return firstname || lastname;
+
         return (
-          fullnameF.includes(this.search().trim().toLowerCase()) ||
-          fullnameL.includes(this.search().trim().toLowerCase())
+          fullnameF.startsWith(this.search().trim().toLowerCase()) ||
+          fullnameL.startsWith(this.search().trim().toLowerCase())
         );
       });
     }
