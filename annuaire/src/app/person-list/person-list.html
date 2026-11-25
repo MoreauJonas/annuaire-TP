@@ -1,6 +1,11 @@
 <section class="contain-cards">
+  <div class="inputs-contain">
+    <label for="search">Recherche: </label>
+    <input id="#search" type="text" [value]="search()" (input)="onChange($event)" />
+    <button (click)="onClear()">Clear</button>
+  </div>
   <ul>
-    @for (person of personApi.persons(); track person.login.uuid) {
+    @for (person of visiblePersons(); track person.login.uuid) {
       <li>
         <a [routerLink]="['/personnes', person.login.uuid]"
           ><app-card-person [person]="person" />
