@@ -9,7 +9,11 @@
       <img [src]="p.picture.thumbnail" [alt]="p.name.first" />
       <div class="article_content">
         <h2>{{ p.name.last }} {{ p.name.first }}</h2>
-        <p>{{ p.location.city }}</p>
+        <p><strong>Age:</strong> {{ p.dob.age }} ans</p>
+        <p><strong>Email:</strong>{{ p.phone }}</p>
+        <p><strong>Téléphone:</strong> {{ p.location.city }}</p>
+        <p><strong>Portable:</strong> {{ p.mobile }}</p>
+        <p><strong>Ville:</strong> {{ p.location.city }}</p>
       </div>
     </article>
   } @else {
