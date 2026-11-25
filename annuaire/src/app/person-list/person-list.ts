@@ -1,8 +1,7 @@
-import { Component, computed, signal, input, inject } from '@angular/core';
+import { Component, computed, signal, inject } from '@angular/core';
 import { CardPerson } from '../card-person/card-person';
 import { PersonApiService } from '../person-api.service';
 import { RouterLink } from '@angular/router';
-import { Person } from '../models/person.model';
 @Component({
   imports: [CardPerson, RouterLink],
   selector: 'app-person-list',
@@ -25,15 +24,15 @@ export class PersonList {
       return persons;
     } else {
       return persons.filter((person) => {
-        const firstname = person.name.first
-          .trim()
-          .toLowerCase()
-          .includes(this.search().trim().toLowerCase());
-        const lastname = person.name.last
-          .trim()
-          .toLowerCase()
-          .includes(this.search().trim().toLowerCase());
-        return firstname || lastname;
+        const fullnameF =
+          person.name.first.trim().toLowerCase() + ' ' + person.name.last.trim().toLowerCase();
+        const fullnameL =
+          person.name.last.trim().toLowerCase() + ' ' + person.name.first.trim().toLowerCase();
+        // return firstname || lastname;
+        return (
+          fullnameF.includes(this.search().trim().toLowerCase()) ||
+          fullnameL.includes(this.search().trim().toLowerCase())
+        );
       });
     }
   });
